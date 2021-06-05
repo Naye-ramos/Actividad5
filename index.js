@@ -7,6 +7,7 @@ const routes = require('./routes');
 // imprtar nuestro archivo de conexión a la BD
 const db = require('./config/bd');
 require('./models/Estado');
+require('./models/Municipio');
 
 // decirle a Sequelize que sincronice los modelos
 db.sync({}) // alter:true })
