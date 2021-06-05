@@ -4,6 +4,7 @@ const router = express.Router();
 
 const estadoController = require('../controllers/EstadoController');
 const municipioController = require('../controllers/MunicipioController');
+const clienteController = require('../controllers/ClienteController');
 
 // definir las rutas
 module.exports = function() {

@@ -8,6 +8,8 @@ const routes = require('./routes');
 const db = require('./config/bd');
 require('./models/Estado');
 require('./models/Municipio');
+require('./models/Cliente');
+require('./models/Direccion');
 
 // decirle a Sequelize que sincronice los modelos
 db.sync({}) // alter:true })
