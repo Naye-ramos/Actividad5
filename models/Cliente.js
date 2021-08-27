@@ -60,7 +60,7 @@ const Cliente = db.define('Cliente',{
 
 
 // asociación de pertenencia: una dirección pertenece a un cliente, un cliente tiene una dirección
-Cliente.belongsTo(Direccion, { onDelete:'CASCADE '});
+Direccion.belongsTo(Cliente, { onDelete:'CASCADE '});
 
 // Exportarlo
 module.exports = Cliente;
