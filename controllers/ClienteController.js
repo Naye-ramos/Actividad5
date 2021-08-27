@@ -8,14 +8,6 @@ const Direccion = require('../models/Direccion');
 exports.agregar = async (req, res, next) => {
   try {
     // crear un cliente con los datos recibidos
-    await Direccion.create({
-      calle: req.body.calle,
-      numeroExterior: req.body.numeroExterior,
-      numeroInterior: req.body.numeroInterior,
-      codigoPostal: req.body.codigoPostal,
-      LocalidadId: req.body.LocalidadId,
-    });
-    // crear un cliente con los datos recibidos
     await Cliente.create({
       nombre: req.body.nombre,
       apellidos: req.body.apellidos,
@@ -23,6 +15,16 @@ exports.agregar = async (req, res, next) => {
       email: req.body.email,
       telefono: req.body.telefono,
       DireccionId: req.body.DireccionId,
+      Direccion: [{
+        calle: req.body.calle,
+        numeroExterior: req.body.numeroExterior,
+        numeroInterior: req.body.numeroInterior,
+        codigoPostal: req.body.codigoPostal,
+        LocalidadId: req.body.LocalidadId,
+      }]
+    },
+    {
+      include: [Direccion]
     });
     res.json({ mensaje: 'Se agregó el cliente.' });
   } catch (error) {
